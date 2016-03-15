@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Error</title>
+	</head>
+	<body>
+		<div id="page_container"> 
+			<form method="POST" action="self">
+				<input type="text" id="numbr" value="" onkeypress="return isNumber(event);">
+			</form>
+		</div>	
+
+		<script>
+			var status = 'true';
+			function isNumber(e) {
+				
+				var numCode = e.charCode;
+
+				if(status === 'true')
+				{
+					if( numCode == 0 || ( numCode >= 48 && numCode <= 57 ))
+					{
+						return true;
+					}
+					else
+					{
+						document.getElementById('numbr').style.background = 'red';
+						status = false;
+					}
+				}
+				return false;
+			    
+			}
+
+		</script>
+	</body>
+</html>
